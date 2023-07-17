@@ -15,8 +15,8 @@ class Whatapp_UI extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.teal,
-          title: Text('WhatApp '),
-          bottom: TabBar(
+          title:const Text('WhatApp '),
+          bottom: const TabBar(
             tabs: [
               Tab(
                 child: Icon(Icons.people),
@@ -33,10 +33,10 @@ class Whatapp_UI extends StatelessWidget {
             ],
           ),
           actions: [
-            Icon(Icons.camera_alt_outlined),
-            SizedBox(width: 20,),
-            Icon(Icons.search),
-            SizedBox(width: 10,),
+            const Icon(Icons.camera_alt_outlined),
+            const SizedBox(width: 20,),
+            const Icon(Icons.search),
+            const SizedBox(width: 10,),
            PopupMenuButton(
              icon:Icon( Icons.more_vert_outlined),
                itemBuilder: (context, )=>[
@@ -68,7 +68,54 @@ class Whatapp_UI extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            Text('hello'),
+           Column(
+             children: [
+               const  SizedBox(
+                 height: 20,
+               ),
+              Container(
+                 height: 250,
+                 width: 400,
+
+                   child: const Image(
+                     image: AssetImage('assets/images/community.jpeg'),
+                   ),
+               ),
+               const  SizedBox(height: 10,),
+               const Text('Stay Connected with community',
+                 style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
+               ),
+               const SizedBox(
+                 height: 20,
+
+               ),
+              RichText(
+                textAlign: TextAlign.center,
+                  text: const TextSpan(
+                children: [
+                  TextSpan(text: 'Community bring members together in \n'
+                      'topic-based group, and make it easy to get \n'
+                      'admin announcements .Any community you\'re\n '
+                      'added to will appear here', ),
+                  TextSpan(text: 'Learn more',style: TextStyle(color: Colors.teal))
+                ]
+              )),
+               const SizedBox(height: 20,),
+               Container(
+                 height: 35,
+                 width: 400,
+                 decoration: BoxDecoration(
+                   borderRadius: BorderRadius.circular(20),
+                   color: Colors.teal,
+
+                 ),
+                 child: const Center(
+                   child: Text('Start your community',
+                     style: TextStyle(color: Colors.white),),
+                 ),
+               )
+             ],
+           ),
             Text('hello'),
             Text('hello'),
             Text('hello'),
