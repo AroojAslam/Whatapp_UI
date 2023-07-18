@@ -182,7 +182,25 @@ class Whatapp_UI extends StatelessWidget {
 
               },
             ),
-            Text('call')
+            ListView.builder(
+              itemCount: 2,
+              itemBuilder: (context, index) {
+                return const ListTile(
+                  title: Text('Arooj aslam'),
+                  subtitle:Row(
+                    children: [
+                      Icon(Icons.call_missed_outgoing_outlined,color: Colors.red,),
+                      Text('july 16 ,1:116 PM'),
+                    ],
+                  ),
+                  trailing: Icon(Icons.phone),
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.teal,
+                    child:Icon(Icons.person),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
