@@ -19,6 +19,7 @@ class Whatapp_UI extends StatelessWidget {
           bottom: const TabBar(
             tabs: [
               Tab(
+
                 child: Icon(Icons.people),
               ),
               Tab(
@@ -68,6 +69,7 @@ class Whatapp_UI extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
+
            Column(
              children: [
                const  SizedBox(
@@ -116,7 +118,24 @@ class Whatapp_UI extends StatelessWidget {
                )
              ],
            ),
-            Text('hello'),
+            TabBarView(
+              children: [
+                ListView.builder(
+                  itemCount: 2,
+                  itemBuilder: (context, index) {
+                    return const ListTile(
+                      title: Text('Arooj aslam'),
+                      subtitle: Text('your masssges'),
+                      trailing: Text('11:56 am'),
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.teal,
+                        child:Icon(Icons.person),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
             Text('hello'),
             Text('hello'),
           ],
