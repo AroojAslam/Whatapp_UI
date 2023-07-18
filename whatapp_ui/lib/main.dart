@@ -118,26 +118,71 @@ class Whatapp_UI extends StatelessWidget {
                )
              ],
            ),
-            TabBarView(
-              children: [
-                ListView.builder(
-                  itemCount: 2,
-                  itemBuilder: (context, index) {
-                    return const ListTile(
-                      title: Text('Arooj aslam'),
-                      subtitle: Text('your masssges'),
-                      trailing: Text('11:56 am'),
-                      leading: CircleAvatar(
-                        backgroundColor: Colors.teal,
-                        child:Icon(Icons.person),
-                      ),
-                    );
-                  },
-                ),
-              ],
+            ListView.builder(
+              itemCount: 2,
+              itemBuilder: (context, index) {
+                return const ListTile(
+                  title: Text('Arooj aslam'),
+                  subtitle: Text('your masssges'),
+                  trailing: Text('11:56 am'),
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.teal,
+                    child:Icon(Icons.person),
+                  ),
+                );
+              },
             ),
-            Text('hello'),
-            Text('hello'),
+            ListView.builder(
+              itemCount: 2,
+              itemBuilder: (context, index) {
+                if(index == 0){
+                 return  Column(
+                   crossAxisAlignment: CrossAxisAlignment.start,
+                   children: [
+                     Text('Recent Update'),
+                     ListTile(
+                       title: Text('Arooj aslam'),
+                       subtitle: Text('15 minutes age'),
+                       leading: Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.teal,
+                            width: 3
+                          ),
+                          shape: BoxShape.circle,
+                        ),
+                         child: CircleAvatar(
+                           backgroundColor: Colors.white24,
+                           child:Icon(Icons.person),
+                         ),
+                       )
+                     ),
+                   ],
+                 );
+                }
+                  else{
+                  return ListTile(
+                      title: Text('Arooj aslam'),
+                      subtitle: Text('15 minutes age'),
+                      leading: Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              color: Colors.teal,
+                              width: 3
+                          ),
+                          shape: BoxShape.circle,
+                        ),
+                        child: CircleAvatar(
+                          backgroundColor: Colors.white24,
+                          child:Icon(Icons.person),
+                        ),
+                      )
+                  );
+                }
+
+              },
+            ),
+            Text('call')
           ],
         ),
       ),
